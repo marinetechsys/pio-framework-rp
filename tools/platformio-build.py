@@ -24,7 +24,7 @@ upload_protocol = env.subst("$UPLOAD_PROTOCOL") or "picotool"
 ram_size = int(board.get("upload.maximum_ram_size"))
 psram_len = int(board.get("upload.psram_length", "0"))
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-arduinopico")
+FRAMEWORK_DIR = platform.get_package_dir("framework-arduinopico-mts")
 assert os.path.isdir(FRAMEWORK_DIR)
 
 # read includes from this file to add them into CPPPATH later for good IDE intellisense

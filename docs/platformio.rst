@@ -99,7 +99,7 @@ Previous versions of this documentation told users to inject the framework and t
 
     ; note that download link for toolchain is specific for OS. see https://github.com/earlephilhower/pico-quick-toolchain/releases.
     platform_packages =
-        maxgerhardt/framework-arduinopico@https://github.com/earlephilhower/arduino-pico.git
+        maxgerhardt/framework-arduinopico-mts@https://github.com/earlephilhower/arduino-pico.git
         maxgerhardt/toolchain-pico@https://github.com/earlephilhower/pico-quick-toolchain/releases/download/1.3.1-a/x86_64-w64-mingw32.arm-none-eabi-7855b0c.210706.zip
 
 This is now **deprecated** and should not be done anymore. Users should delete these ``platform_packages`` lines and update the platform integration by issuing the command
@@ -110,7 +110,7 @@ This is now **deprecated** and should not be done anymore. Users should delete t
 
 in the `PlatformIO CLI <https://docs.platformio.org/en/latest/integration/ide/vscode.html#platformio-core-cli>`_. The same can be achieved by using the VSCode PIO Home -> Platforms -> Updates GUI.
 
-The toolchain, which was also renamed to ``toolchain-rp2040-earlephilhower`` is downloaded automatically from the registry. The same goes for the ``framework-arduinopico`` toolchain package, which points directly to the Arduino-Pico Github repository.
+The toolchain, which was also renamed to ``toolchain-rp2040-earlephilhower`` is downloaded automatically from the registry. The same goes for the ``framework-arduinopico-mts`` toolchain package, which points directly to the Arduino-Pico Github repository.
 However, users can still select a custom fork or branch of the core if desired so, as detailed in a chapter below.
 
 Selecting the new core
@@ -352,12 +352,12 @@ If you wish to use a different version of the core, e.g., the latest git
 ``master`` version, you can use a
 `platform_packages <https://docs.platformio.org/en/latest/projectconf/section_env_platform.html#platform-packages>`__
 directive to do so. Simply specify that the framework package
-(``framework-arduinopico``) comes from a different source.
+(``framework-arduinopico-mts``) comes from a different source.
 
 .. code:: ini
 
     platform_packages =
-       framework-arduinopico@https://github.com/earlephilhower/arduino-pico.git#master
+       framework-arduinopico-mts@https://github.com/earlephilhower/arduino-pico.git#master
 
 Whereas the ``#master`` can also be replaced by a ``#branchname`` or a
 ``#commithash``. If left out, it will pull the default branch, which is ``master``.

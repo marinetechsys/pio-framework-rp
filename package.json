@@ -1,5 +1,5 @@
 {
-  "name": "framework-arduinopico",
+  "name": "framework-arduinopico-mts",
   "version": "1.40600.0",
   "description": "Arduino Wiring-based Framework (RPi Pico RP2040, RP2350)",
   "keywords": [
