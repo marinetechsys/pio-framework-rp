@@ -7,7 +7,9 @@
 #ifndef configRUN_MULTIPLE_PRIORITIES
 #define configRUN_MULTIPLE_PRIORITIES     1
 #endif
-
+#ifndef configUSE_TICKLESS_IDLE
+#define configUSE_TICKLESS_IDLE            1
+#endif
 #ifndef configUSE_PREEMPTION
 #define configUSE_PREEMPTION              1
 #endif
@@ -259,6 +261,20 @@ void rtosFatalError(void);
 
 #ifndef LIB_PICO_MULTICORE
 #define LIB_PICO_MULTICORE 1
+#endif
+
+extern "C"
+{
+    extern void vPortPreSleep(TickType_t expectedIdle);
+    extern void vPortPostSleep(TickType_t expectedIdle);
+}
+
+#ifndef configPRE_SLEEP_PROCESSING
+#define configPRE_SLEEP_PROCESSING( x ) vPortPreSleep(x)
+#endif
+
+#ifndef configPOST_SLEEP_PROCESSING
+#define configPOST_SLEEP_PROCESSING( x ) vPortPostSleep(x)
 #endif
 
 #include "rp2040_config.h"
