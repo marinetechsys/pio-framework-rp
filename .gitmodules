@@ -46,3 +46,6 @@
 [submodule "libraries/SdFat"]
 	path = libraries/SdFat
 	url = https://github.com/greiman/SdFat.git
+[submodule "libraries/FreeRTOS"]
+	path = libraries/FreeRTOS
+	url = https://github.com/marinetechsys/pio-freertos-rp.git
